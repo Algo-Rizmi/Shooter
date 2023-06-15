@@ -1,0 +1,194 @@
+h1 {
+  color: rgb(0, 0, 0);
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start; /* Adjusted to top */
+  justify-content: flex-start; /* Adjusted to left */
+  background-color: black;
+  overflow: hidden;
+}
+.container {
+  font-size: 10px;
+  width: 40em;
+  height: 40em;
+  position: relative;
+}
+
+.sun {
+  position: absolute;
+  top: 400px;
+  left: 50px;
+  width: 5em;
+  height: 5em;
+  background-color: rgb(255, 255, 89);
+  border-radius: 50%;
+  box-shadow: 0 0 3em white;
+}
+
+.star {
+  position: absolute;
+  top: 750px;
+  left: 60px;
+  width: 10em;
+  height: 10em;
+  background-color: rgb(255, 255, 200);
+  border-radius: 50%;
+  box-shadow: 0 0 3em white;
+}
+
+.ice {
+  position: absolute;
+  top: 400px;
+  left: 1800px;
+  width: 3em;
+  height: 3em;
+  background-color: rgb(167, 195, 255);
+  border-radius: 50%;
+  box-shadow: 0 0 3em white;
+}
+
+.storm {
+  position: absolute;
+  top: 30px;
+  left: 1700px;
+  width: 4em;
+  height: 4em;
+  background-color: rgb(255, 199, 79);
+  border-radius: 50%;
+  box-shadow: 0 0 3em white;
+}
+
+.fire {
+  position: absolute;
+  top: 700px;
+  left: 1800px;
+  width: 4em;
+  height: 4em;
+  background-color: rgb(255, 72, 0);
+  border-radius: 50%;
+  box-shadow: 0 0 3em white;
+}
+.cold {
+  position: absolute;
+  top: 800px;
+  left: 1600px;
+  width: 10em;
+  height: 10em;
+  background-color: rgb(122, 207, 228);
+  border-radius: 50%;
+  box-shadow: 0 0 3em white;
+}
+.earth,
+.moon {
+  position: absolute;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+  border-width: 0.1em 0.1em 0;
+  border-radius: 50%;
+}
+.earth {
+  top: 5em;
+  left: 5em;
+  width: 30;
+  height: 30em;
+  animation: orbit 36.5s linear infinite;
+}
+
+.moon {
+  top: 0;
+  right: 0;
+  width: 8em;
+  height: 8em;
+  animation: orbit 2.7s linear infinite;
+}
+
+.earth::before,
+.moon::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+.earth::before {
+  top: 2.8em;
+  right: 2.8em;
+  width: 3em;
+  height: 3em;
+  background-color: rgb(7, 44, 255);
+}
+
+.moon::before {
+  top: 0.8em;
+  right: 0.2em;
+  width: 1.2em;
+  height: 1.2em;
+  background-color: silver;
+}
+
+.mars,
+.marsmoon {
+  position: absolute;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+  border-width: 0.1em 0.1em 0;
+  border-radius: 50%;
+}
+
+.mars {
+  top: 8em;
+  left: 8em;
+  width: 22em;
+  height: 22em;
+  animation: orbit 68.3s linear infinite;
+}
+
+.marsmoon {
+  top: 0;
+  right: 0;
+  width: 5em;
+  height: 5em;
+  animation: orbit 7.7s linear infinite;
+}
+
+.mars::before,
+.marsmoon::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+.mars::before {
+  top: 1.6em;
+  right: 1.6em;
+  width: 2.5em;
+  height: 2.5em;
+  background-color: rgb(153, 8, 8);
+}
+
+.marsmoon::before {
+  top: 0.4em;
+  right: 0.1em;
+  width: 1em;
+  height: 1em;
+  background-color: gray;
+}
+
+@keyframes orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+p {
+  font-family: Arial;
+}
+
+canvas {
+  border: 10px solid rgb(0, 0, 0);
+  position: absolute;
+  top: 90px;
+  left: 450px;
+}
