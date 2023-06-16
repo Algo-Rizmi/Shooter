@@ -81,8 +81,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const angle = Math.atan2(mouseY - shooter.y, mouseX - shooter.x);
     const velocity = {
-      x: Math.cos(angle) * 5,
-      y: Math.sin(angle) * 5,
+      x: Math.cos(angle) * 20,
+      y: Math.sin(angle) * 20,
     };
 
     const projectile = new Projectiles(
@@ -139,7 +139,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     if (!enemy) {
-      enemy = new Enemies(250, 50, 20, 40, 4, 4);
+      const xPos = Math.random() * (canvas.width - 100) + 50;
+      const yPos = Math.random() * (canvas.width - 100) + 50;
+      enemy = new Enemies(xPos, yPos, 20, 40, 4, 4);
     }
     //Animate
     requestAnimationFrame(Animate);
