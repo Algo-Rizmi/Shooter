@@ -70,8 +70,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let dx = mouseX - shooter.s - shooter.x;
     let dy = mouseY - shooter.s - shooter.y;
 
-    shooter.x += dx * shooterSpeed;
-    shooter.y += dy * shooterSpeed;
+    shooter.x += (dx * shooterSpeed) / 1.5;
+    shooter.y += (dy * shooterSpeed) / 1.5;
   });
 
   document.addEventListener("click", function (event) {
