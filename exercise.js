@@ -1,7 +1,7 @@
 function fibonacci(n) {
   return n <= 2 ? 1 : fibonacci(n - 1) + fibonacci(n - 2);
 }
-
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 let twoSum = function (nums, target) {
   let storage = {};
 
@@ -15,6 +15,7 @@ let twoSum = function (nums, target) {
   }
   return [];
 };
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 function removeElement(nums, val) {
   let j = 0;
@@ -29,6 +30,7 @@ function removeElement(nums, val) {
   }
   return j;
 }
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 function removeElements(nums, val) {
   const arr = [];
@@ -44,6 +46,7 @@ function removeElements(nums, val) {
 let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 // console.log(removeElement(nums, val));
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 function reversArr(nums) {
   const arr = [];
@@ -55,3 +58,24 @@ function reversArr(nums) {
 }
 
 console.log(reversArr(nums));
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+let isSameTree = function (p, q) {
+  if (p === null && q === null) {
+    return true;
+  }
+
+  if (p === null || q === null) {
+    return false;
+  }
+
+  if (p.val !== q.val) {
+    return false;
+  }
+
+  const leftSame = isSameTree(p.left, q.left);
+  const rightSame = isSameTree(p.right, q.right);
+
+  return leftSame && rightSame;
+};

@@ -1,3 +1,5 @@
+let enemyImage = new Image();
+enemyImage.src = "ghost.png";
 class Shooter {
   constructor(xPos, yPos, straal, speedX, speedY) {
     this.x = xPos;
@@ -26,8 +28,7 @@ class Enemies {
   }
 
   draw(context) {
-    context.fillStyle = "blue";
-    context.fillRect(this.x, this.y, this.w, this.h);
+    context.fillRect(enemyImage, this.x, this.y, this.w, this.h);
   }
 }
 
