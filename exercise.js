@@ -99,3 +99,23 @@ let digits = [9];
 
 let result = plusOne(digits);
 console.log(result);
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+const searchInsert = function (nums, target) {
+  let low = 0;
+  let high = nums.length - 1;
+
+  const mid = Math.floor((high + low) / 2);
+
+  while (low <= high) {
+    if (nums[mid] === target) {
+      return mid;
+    } else if (nums[mid] < target) {
+      low = mid + 1;
+    } else {
+      high = mid - 1;
+    }
+  }
+  return low;
+};
